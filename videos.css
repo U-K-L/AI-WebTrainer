@@ -1,0 +1,41 @@
+/*
+    techConnect project
+    note: just messing around 
+    
+    How To Videos Page
+    
+    Author: Carlos Chavez
+    
+    Date:   4/9/18
+    
+    Filename: videos.css
+
+   This file contains the base styles used by the video page
+*/
+.header{
+        text-align: center;
+        text-decoration: underline;        
+}
+
+//box for videos
+.boxes{
+    width: 320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0; 
+}
+footer {
+    text-align: center;
+    color:gray;
+    padding-top: 150px;
+    
+}
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+a:link{
+   text-decoration: none;
+color: white;
+    
+}

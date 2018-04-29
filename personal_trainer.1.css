@@ -1,0 +1,56 @@
+/*
+    techConnect project
+    note: just messing around 
+    
+    Personal Trainer Home Page
+    
+    Author: Carlos Chavez
+    
+    Date:   2/20/18
+    
+    Filename: personal_trainer.1.css
+
+   This file contains the base styles used by the home page of the website
+
+*/
+
+/* default colors, margins, and sizing */
+
+/*header specifics*/
+
+
+/* body */
+ 
+body {
+    background-color: #FFF7C9;   
+    
+}
+header {
+    text-align: center;
+    letter-spacing: 1px;
+    height: 10em;
+    padding: 2em 10%;
+    background: #2c3e50;
+    color: #fff;
+}
+
+a:link{
+   text-decoration: none;
+color: white;
+    
+}
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* footer */
+
+footer {
+    text-align: center;
+    color:gray;
+    padding-top: 150px;
+    
+}

@@ -1,0 +1,50 @@
+/*
+    techConnect project
+    note: just messing around 
+    
+    Personal Trainer Nutrition Page
+    
+    Author: Carlos Chavez
+    
+    Date:   4/11/18
+    
+    Filename: personal_trainer.1.css
+
+   This file contains the base styles used by the home page of the website
+
+*/
+
+/* default colors, margins, and sizing */
+
+/*header specifics*/
+
+
+/* body */
+
+body{
+    border: 20px solid #bdc3c7;
+    padding 20px;
+    max-width: 700px;
+    margin: 20px auto;     
+}
+h1{
+    font-family: sans-serif;
+}
+footer {
+    text-align: center;
+    color:gray;
+    padding-top: 150px;
+    
+}
+p {
+   font-family: Gill Sans, sans-serif;
+}
+a:link{
+   text-decoration: none;
+color: white;
+    
+}
+a:visited{
+    color: white;
+    text-decoration: none;
+}
