@@ -20,6 +20,7 @@ def index():
     else:
         return render_template('index.html')
 
+#route for the signup page.
 @app.route('/signup')
 def signup():
    return render_template("signup.html")
