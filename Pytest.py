@@ -1,7 +1,7 @@
 import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -13,10 +13,22 @@ db = scoped_session(sessionmaker(bind = engine))
 #Where to go.
 @app.route('/')
 #Method tied to app route.
-
 def index():
     #names = db.excute("CREATE TABLE flight")
-    return render_template('index.html')
+    if request.method == "POST":
+        return "Hello World"
+    else:
+        return render_template('index.html')
+
+@app.route('/signup')
+def signup():
+   return render_template("signup.html")
+
+@app.route('/nutrition')
+#Method for nutrition route.
+def nutrition():
+    return "hello world"
+
     
 if __name__ == "__main__":
     app.run(debug=True)
