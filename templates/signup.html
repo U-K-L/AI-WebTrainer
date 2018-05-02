@@ -10,45 +10,51 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   </style>
-      <link rel="stylesheet" href="static/styles/main.css" />
+<link rel="stylesheet" href="static/styles/main.css" />
 </head>
+
 <body>
-	
-  <!--Creates the black bar on top-->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <!--New div class.-->
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        </button>
-          <a class="navbar-brand" href="#"><img src="static/images/TetraSymbol.png" width="25%"></a>
-          <h3 class="navbar-text">Intelligent Trainer</h3>
-		</div>
-        <ul class="nav navbar-nav navbar-right">
+    <!--Creates the black bar on top-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <!--New div class.-->
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="static/images/TetraSymbol.png" width="25%">
+                </a>
+                <h3 class="navbar-text">Intelligent Trainer</h3>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
 
-          <li>
-            <a href="mailto:carloschavez_07@yahoo.com; nwilliams5343@students.mc3.edu" class="btn btn-primary btn-lg">
-              <span class="btnN glyphicon glyphicon-envelope"></span> Mail
+                <li>
+                    <a href="mailto:carloschavez_07@yahoo.com; nwilliams5343@students.mc3.edu" class="btn btn-primary btn-lg">
+                        <span class="btnN glyphicon glyphicon-envelope"></span> Mail
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-question-sign"></span>About us
+                    </a>
+                </li>
+
+                <li>
+            <a href="calendar" class="btn btn-primary btn-lg">
+                <span class="btnN glyphicon glyphicon-calendar"></span> Menu
             </a>
-          </li>
+                </li>
 
-          <li>
-            <a href="about_us.html" class="btn btn-primary btn-lg">
-              <span class="glyphicon glyphicon-question-sign"></span>About us
-            </a>
-          </li>
+            </ul>
+        </div>
 
-          <li>
-            <a href="#" class="btn btn-primary btn-lg">
-            <span class="btnN glyphicon glyphicon-menu-hamburger"></span> Menu
-            </a>
-          </li>
-
-        </ul>
-      </div>
-  </nav>
-	
-<!--Intro Section-->
+        </div>
+    </nav>
+      
+      
+      <!---Log in stuff -->
+    Section-->
             <div class = "jumbotron">   
             <p>
             <section class="view intro-2 hm-gradient">
@@ -60,9 +66,9 @@
                                     <div class="white-text">
                                         <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Change your life today! </h1>
                                         <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-                                        <h6 class="wow fadeInLeft" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae, quisquam iste, maiores. Nulla.</h6>
+                                        <h6 class="wow fadeInLeft" data-wow-delay="0.3s">Tired of being average? Our AI WebTrainer can change your life! Not only will you see physical results, but you will also feel healthier. The AI WebTrainer designs a workout plan for you and also guides you through each workout </h6>
                                         <br>
-                                        <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
+                                        <a href = "index.html" class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
                                     </div>
                                 </div>
                                 
@@ -80,23 +86,23 @@
 <form>
 
     <!-- input username -->
-    <label for="defaultFormRegisterNameEx" class="grey-text">Your user name</label>
+    <label for="defaultFormRegisterNameEx" class="grey-text">User name</label>
     <input type="text" id="defaultFormRegisterNameEx" class="form-control">
     
     <br>
 
     <!-- input password -->
-    <label for="defaultFormRegisterEmailEx" class="grey-text">Your password</label>
-    <input type="email" id="defaultFormRegisterEmailEx" class="form-control">
+    <label for="defaultFormRegisterEmailEx" class="grey-text">BMI (body mass index)</label>
+    <input type="number" class="form-control">
     
     <br>
 
     <!--input bmi -->
-    <label for="defaultFormRegisterPasswordEx" class="grey-text">Your BMI (body mass index)</label>
+    <label for="defaultFormRegisterPasswordEx" class="grey-text">Password</label>
     <input type="password" id="defaultFormRegisterPasswordEx" class="form-control">
 
     <div class="text-center mt-4">
-        <button class="btn btn-unique" type="submit">Register</button>
+       <button class="btn btn-unique"><a href="createWorkOut">Register</a></button>
     </div>
 </form>
 <!-- Default form register -->
@@ -117,4 +123,3 @@
 
     </body>
 </html>
-               

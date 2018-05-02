@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>AI Personal Trainer</title>
+        <meta charset="utf-8">
+        <!--Import libraries -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Get stylesheets. Standard bootstrap, and cloudflare awesome font.-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Get JQuery library. And JS bootstrap library. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            td:hover{
+                background: rgb(80, 25, 25)
+            }
+        </style>
+        <link rel="stylesheet" href="static/styles/main.css" />
+        <link rel="import" href="templates/nav.html">
+        <link rel="stylesheet" href="static/styles/calendar.css?" />
+
+    </head>
+
+    <body>
+        <!--The body of the page.-->
+
+        <!--Creates the black bar on top-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <!--New div class.-->
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="static/images/TetraSymbol.png" width="25%">
+                    </a>
+                    <h3 class="navbar-text">Intelligent Trainer</h3>
+                </div>
+                <div class "collapse navbar-collapse id="myNavbar ">
+            <ul class="nav navbar-nav navbar-right ">
+    
+              <li>
+                <a href="# " class="btn btn-primary btn-lg ">
+                  <span class="btnN glyphicon glyphicon-envelope "></span> Mail
+                </a>
+              </li>
+    
+              <li>
+                <a href="# " class="btn btn-primary btn-lg ">
+                  <span class="glyphicon glyphicon-question-sign "></span>About us
+                </a>
+              </li>
+    
+              <li>
+                <a href="# " class="btn btn-primary btn-lg "">
+                    <span class="btnN glyphicon glyphicon-menu-hamburger "></span> Menu
+                    </a>
+                    </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="month">
+                <strong>{{month}} 2018</strong>
+            </div>
+            <table>
+                <tr>
+                    <th> Sunday </th>
+                    <th> Monday </th>
+                    <th> Tuesday </th>
+                    <th> Wednesday </th>
+                    <th> Thursday </th>
+                    <th> Friday </th>
+                    <th> Saturday </th>
+                </tr>
+            </table>
+        </div>
+    </body>
