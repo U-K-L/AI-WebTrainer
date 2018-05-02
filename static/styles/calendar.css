@@ -25,3 +25,7 @@ th{
 td{
     background: #c5ffb9dc;
 }
+
+td :hover{
+    background: #2b2a31dc;
+}
