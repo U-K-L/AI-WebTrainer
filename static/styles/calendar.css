@@ -1,17 +1,11 @@
-body{
-    background:rgb(218, 212, 212);
-}
 .container{
-    max-width:800px;
-    margin:auto;
+    max-width:300%;
     font-family:sans-serif;
 
 }
 .month{
-    text-align:center;
     font-size:3em;
-    padding:15px;
-    background:rgb(67, 107, 238);
+    background:rgba(22, 40, 102, 0.308);
     color:white;
 }
 table, th, td {
@@ -19,19 +13,15 @@ table, th, td {
     table-layout:fixed;
     text-align:center;
     font-size:17px;
-    border-collapse:collapse;
-    border:1px solid skyblue;
+    border:1px solid rgb(51, 66, 83);
 }
 tr, th, td{
-    padding:15px;
+    padding:20px;
 }
 th{
-    background:rgb(0, 23, 97);
+    background:rgba(0, 23, 97, 0.747);
     color:white;
 }
 td{
-    background: #c5ffb9;
-}
-td:hover{
-    background: #0000008f
+    background: #c5ffb9dc;
 }
