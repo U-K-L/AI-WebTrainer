@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="static/styles/main.css" />
+        <script>
+            //Create a function to say Hello.
+            function hello(){
+                alert('Hello');
+            }
+
+            function SelectedDays(string) {
+                    document.addEventListener('DOMConetentLoaded', function () {
+                        //Change to red.
+                        document.querySelector('#tuesday').onclick = function () {
+                            document.querySelector("#tuesday").style.background = 'green';
+                        };
+                    });
+                    if (string == "sunday") {
+                        alert("SUNDAY");
+                    }
+                    else if (string == "monday") {
+                        alert('MONDAY');
+                        document.body.style.color = "purple";
+                        document.getElementById('#monday').onclick = changecolor;
+                    }
+                }
+            function changecolor(){
+                    document.body.style.color = "purple";
+                    return false;
+                }
+        </script>
+        <th > Monday </th>
+        <button id="monday" onclick="SelectedDays('monday')">HIIIII</button>
+    </head>
+</html>

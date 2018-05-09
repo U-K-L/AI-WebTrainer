@@ -1,3 +1,8 @@
+body{
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
 .container{
     max-width:300%;
     font-family:sans-serif;
@@ -7,6 +12,15 @@
     font-size:3em;
     background:rgba(22, 40, 102, 0.308);
     color:white;
+}
+
+.button{
+    width:400%;
+    table-layout:fixed;
+    text-align:center;
+    font-size:17px;
+    border:1px solid rgb(51, 66, 83);
+    background:rgb(255, 0, 0);
 }
 table, th, td {
     width:100%;
@@ -26,6 +40,10 @@ td{
     background: #c5ffb9dc;
 }
 
-td :hover{
-    background: #2b2a31dc;
+tr :hover{
+    background: #6dff50dc;
+}
+
+th :hover{
+    background: #6dff50dc;
 }

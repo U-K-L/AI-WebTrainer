@@ -28,7 +28,7 @@ def add():
     db.session.add(user)
     db.session.commit()
     return render_template('signup.html')
-    
+
 #route for the signup page.
 @app.route('/signup')
 def signup():
@@ -37,7 +37,7 @@ def signup():
 
 @app.route('/days')
 def days():
-   return render_template("AvilableWeekDays.html")
+   return render_template("avdays.html")
 
 @app.route('/createWorkOut')
 def createDays():

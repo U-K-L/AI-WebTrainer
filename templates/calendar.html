@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="static/styles/main.css" />
     <link rel="import" href="templates/nav.html">
 <link rel="stylesheet" href="static/styles/calendar.css" />
+<!--<script src="{{ url_for('static', filename='testJS.js') }}"></script>-->
+
 
 </head>
 <body background="static/images/heal.jpg">
@@ -79,18 +81,18 @@
         <br>
         <table>
             <tr>
-                <th> Sunday </th>
-                <th> Monday </th>
-                <th> Tuesday </th>
-                <th> Wednesday </th>
-                <th> Thursday </th>
-                <th> Friday </th>
-                <th> Saturday </th>
+                <th id="sunday" onclick="SelectedDays('sunday')"> Sunday </th>
+                <th id="monday" onclick="SelectedDays('monday')">  Monday </th>
+                <th id="tuesday" onclick="SelectedDays('tuesday')"> Tuesday </th>
+                <th id="wednesday" onclick="SelectedDays('wednesday')"> Wednesday </th>
+                <th id="thursday" onclick="SelectedDays('thursday')"> Thursday </th>
+                <th id="friday" onclick="SelectedDays('friday')"> Friday </th>
+                <th id="saturday" onclick="SelectedDays('saturday')"> Saturday </th>
             </tr>
             <tr>
                 {%for day in days%}
                 {%- if day > 0 -%}
-                    <td>{{day}}</td>
+                    <td style="background-color: yellow;">{{day}}</td>
                 {% else %}
                     <td></td>
                 {% endif %}
@@ -101,4 +103,55 @@
             </tr>
         </table>
     </div>
+
+    <script>
+        days = [false, false, false, false, false, false, false]
+        strDays= ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+        original_color = null;
+        dayCount = 0
+
+            function SelectedDays(string) {
+                if(dayCount < 2)
+                {
+                    for (i = 0; i < 7; i++) {
+                        if(days[i]==false)
+                        {
+                            select(string, i);
+                        }
+                        else if(string == strDays[i]){
+                            deselect(string, i);
+                        }
+                    }
+                }
+                else
+                {
+                    for (i = 0; i < 7; i++){
+                        if(days[i] == true && string == strDays[i]){
+                            deselect(string, i);
+                        }
+                    }
+                }
+            }
+            function select(string, i)
+            {
+                if (string == strDays[i]) {
+                    original_color = document.getElementById(strDays[i]).style.backgroundColor;
+                    document.getElementById(strDays[i]).style.backgroundColor = 'red';
+                    days[i] = true;
+                    daysSelected();
+                }
+            }
+
+            function deselect(string, i)
+            {
+                document.getElementById(strDays[i]).style.backgroundColor = original_color;
+                days[i] = false;
+                dayCount--;
+            }
+
+            function daysSelected() {
+                    dayCount++;
+                }
+    </script>
+
 </body>

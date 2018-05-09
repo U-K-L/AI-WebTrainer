@@ -70,6 +70,12 @@
 
             </div>
         </nav>
+        <body background="static/images/heal.jpg"></body>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
@@ -79,18 +85,69 @@
         <br>
         <div class="container">
             <div class="month">
-                <strong>{{month}} 2018</strong>
+                <strong>Choose your workout days!</strong>
             </div>
+                    <br>
+                    <br>
             <table>
                 <tr>
-                    <th> Sunday </th>
-                    <th> Monday </th>
-                    <th> Tuesday </th>
-                    <th> Wednesday </th>
-                    <th> Thursday </th>
-                    <th> Friday </th>
-                    <th> Saturday </th>
+                <th id="sunday" onclick="SelectedDays('sunday')"> Sunday </th>
+                <th id="monday" onclick="SelectedDays('monday')"> Monday </th>
+                <th id="tuesday" onclick="SelectedDays('tuesday')"> Tuesday </th>
+                <th id="wednesday" onclick="SelectedDays('wednesday')"> Wednesday </th>
+                <th id="thursday" onclick="SelectedDays('thursday')"> Thursday </th>
+                <th id="friday" onclick="SelectedDays('friday')"> Friday </th>
+                <th id="saturday" onclick="SelectedDays('saturday')"> Saturday </th>
                 </tr>
             </table>
         </div>
+        <br>
+        <div align="center">
+            <a href="signup" button type="button" class="btn btn-success"> Get Started</a>
+        </div>
+
+            <script>
+                days = [false, false, false, false, false, false, false]
+                strDays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+                original_color = null;
+                dayCount = 0
+
+                function SelectedDays(string) {
+                    if (dayCount < 2) {
+                        for (i = 0; i < 7; i++) {
+                            if (days[i] == false) {
+                                select(string, i);
+                            }
+                            else if (string == strDays[i]) {
+                                deselect(string, i);
+                            }
+                        }
+                    }
+                    else {
+                        for (i = 0; i < 7; i++) {
+                            if (days[i] == true && string == strDays[i]) {
+                                deselect(string, i);
+                            }
+                        }
+                    }
+                }
+                function select(string, i) {
+                    if (string == strDays[i]) {
+                        original_color = document.getElementById(strDays[i]).style.backgroundColor;
+                        document.getElementById(strDays[i]).style.backgroundColor = 'red';
+                        days[i] = true;
+                        daysSelected();
+                    }
+                }
+
+                function deselect(string, i) {
+                    document.getElementById(strDays[i]).style.backgroundColor = original_color;
+                    days[i] = false;
+                    dayCount--;
+                }
+
+                function daysSelected() {
+                    dayCount++;
+                }
+            </script>
     </body>
