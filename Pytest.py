@@ -1,7 +1,7 @@
 import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, jsonify
 from WebCalendarAI import WebCalendarAI
 from PageManager import PageManager
 from Pages import Pages  
@@ -22,12 +22,27 @@ def index():
     #PageManage.StoreHtml(page)
     return render_template('index.html')
 
+@app.route('/days', methods=['GET','POST'])
+def days():
+    if request.method == 'POST':
+        #days = request.form['days']
+        #text = str(days[2])
+        return render_template("avdays.html") 
+        #return jsonify({days: text})
+        #for day in days:
+         #   print(name)
+    else:
+        return render_template("signup.html")       
+
+    #days = request.form['days']
+    #return jsonify({'days': days})
+
 @app.route('/add', methods=['POST'])
 def add():
-    user = users(id=0, username=request.form['username'], password=request.form['password'], points=0)
+    user = users(username=request.form['username'], password=request.form['password'], points=0)
     db.session.add(user)
     db.session.commit()
-    return render_template('signup.html')
+    return render_template("continue.html")
 
 #route for the signup page.
 @app.route('/signup')
@@ -35,9 +50,13 @@ def signup():
     #createTable()
     return render_template("signup.html")
 
-@app.route('/days')
-def days():
-   return render_template("avdays.html")
+@app.route('/goDays', methods=['POST'])
+def goDays():
+    if request.method == 'POST':
+        days = request.form['days']
+        text = str(days[2])
+        return jsonify({days: text})
+
 
 @app.route('/createWorkOut')
 def createDays():
@@ -48,6 +67,14 @@ def calendar():
     months = createMonths()
     day = createDays()
     return render_template("calendar.html", days=day, month=months)
+
+@app.route('/squat')
+def squat():
+    return render_template('squat.html')
+
+@app.route('/bench')
+def bench():
+    return render_template('bench.html')
     
 def createMonths():
     calendar = WebCalendarAI()

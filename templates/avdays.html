@@ -71,6 +71,7 @@
             </div>
         </nav>
         <body background="static/images/heal.jpg"></body>
+        <form action="/goDays" method="POST">
         <br>
         <br>
         <br>
@@ -102,15 +103,60 @@
             </table>
         </div>
         <br>
-        <div align="center">
-            <a href="signup" button type="button" class="btn btn-success"> Get Started</a>
-        </div>
+        <br><br>
+        <form action="/days" method="POST">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Start Workout</button>
+        </form>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <script>
                 days = [false, false, false, false, false, false, false]
                 strDays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
                 original_color = null;
                 dayCount = 0
+
+                $(document).ready(function(){
+                    $('form').on('submit', function(event){
+
+                        $.ajax({
+                            data: { 
+                               text: $('stringoftext').val()
+                            },
+                            type: 'POST',
+                            url: '/days'
+                        })
+                        .done(function(data){
+                            if(data.error){
+                            }
+                            else{
+                        }})
+                        event.preventDefault();
+                    });
+                });
+
+                function printDays(){
+                    $.ajax({
+                        type: 'POST',
+                        contentType: "application/json;charset=utf-8",
+                        url: "/days",
+                        traditional: "true",
+                        data: JSON.stringify({ days }),
+                        dataType: "json"
+                    });
+                }
 
                 function SelectedDays(string) {
                     if (dayCount < 2) {
@@ -150,4 +196,5 @@
                     dayCount++;
                 }
             </script>
+            </form>
     </body>

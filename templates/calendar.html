@@ -81,18 +81,24 @@
         <br>
         <table>
             <tr>
-                <th id="sunday" onclick="SelectedDays('sunday')"> Sunday </th>
-                <th id="monday" onclick="SelectedDays('monday')">  Monday </th>
-                <th id="tuesday" onclick="SelectedDays('tuesday')"> Tuesday </th>
-                <th id="wednesday" onclick="SelectedDays('wednesday')"> Wednesday </th>
-                <th id="thursday" onclick="SelectedDays('thursday')"> Thursday </th>
-                <th id="friday" onclick="SelectedDays('friday')"> Friday </th>
-                <th id="saturday" onclick="SelectedDays('saturday')"> Saturday </th>
+                <th id="sunday"> Sunday </th>
+                <th id="monday">  Monday </th>
+                <th id="tuesday"> Tuesday </th>
+                <th id="wednesday"> Wednesday </th>
+                <th id="thursday"> Thursday </th>
+                <th id="friday"> Friday </th>
+                <th id="saturday"> Saturday </th>
             </tr>
             <tr>
                 {%for day in days%}
                 {%- if day > 0 -%}
-                    <td style="background-color: yellow;">{{day}}</td>
+                    {%- if loop.index % 7 == 0 -%}
+                        <td onclick="redirect(1)" style="background-color: rgb(30, 255, 0);">{{day}}</td>
+                    {%- elif (loop.index - 1) % 7 == 0 -%}
+                        <td onclick="redirect(2)" style="background-color: rgb(30, 255, 0);">{{day}}</td>
+                    {% else %}
+                        <td>{{day}}</td>
+                     {% endif %}
                 {% else %}
                     <td></td>
                 {% endif %}
@@ -105,53 +111,15 @@
     </div>
 
     <script>
-        days = [false, false, false, false, false, false, false]
-        strDays= ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
-        original_color = null;
-        dayCount = 0
-
-            function SelectedDays(string) {
-                if(dayCount < 2)
-                {
-                    for (i = 0; i < 7; i++) {
-                        if(days[i]==false)
-                        {
-                            select(string, i);
-                        }
-                        else if(string == strDays[i]){
-                            deselect(string, i);
-                        }
-                    }
-                }
-                else
-                {
-                    for (i = 0; i < 7; i++){
-                        if(days[i] == true && string == strDays[i]){
-                            deselect(string, i);
-                        }
-                    }
-                }
+        function redirect(num){
+            if (num == 1){
+                location.href = "/bench"
             }
-            function select(string, i)
+            else if (num == 2)
             {
-                if (string == strDays[i]) {
-                    original_color = document.getElementById(strDays[i]).style.backgroundColor;
-                    document.getElementById(strDays[i]).style.backgroundColor = 'red';
-                    days[i] = true;
-                    daysSelected();
-                }
+                location.href = "/squat"
             }
-
-            function deselect(string, i)
-            {
-                document.getElementById(strDays[i]).style.backgroundColor = original_color;
-                days[i] = false;
-                dayCount--;
-            }
-
-            function daysSelected() {
-                    dayCount++;
-                }
+        }
     </script>
 
 </body>
