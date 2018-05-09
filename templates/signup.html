@@ -10,48 +10,42 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   </style>
-<link rel="stylesheet" href="static/styles/main.css" />
-<link rel="stylesheet" href="static/styles/calendar.css?" />
+      <link rel="stylesheet" href="test.css" />
 </head>
-
 <body>
-    <!--Creates the black bar on top-->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <!--New div class.-->
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                </button>
-                <a class="navbar-brand" href="/">
-                    <img src="static/images/TetraSymbol.png" width="25%">
-                </a>
-                <h3 class="navbar-text">Intelligent Trainer</h3>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
+  <!--Creates the black bar on top-->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <!--New div class.-->
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        </button>
+          <a class="navbar-brand" href="index.html"><img src="img/TetraSymbol.png" width="25%"></a>
+          <h3 class="navbar-text">Intelligent Trainer</h3>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
 
-                <li>
-                    <a href="mailto:carloschavez_07@yahoo.com; nwilliams5343@students.mc3.edu" class="btn btn-primary btn-lg">
-                        <span class="btnN glyphicon glyphicon-envelope"></span> Mail
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index" class="btn btn-primary btn-lg">
-                        <span class="glyphicon glyphicon-question-sign"></span>About us
-                    </a>
-                </li>
-
-                <li>
-            <a href="calendar" class="btn btn-primary btn-lg">
-                <span class="btnN glyphicon glyphicon-calendar"></span> Calendar
+          <li>
+            <a href="mailto:carloschavez_07@yahoo.com; nwilliams5343@students.mc3.edu" class="btn btn-primary btn-lg">
+              <span class="btnN glyphicon glyphicon-envelope"></span> Mail
             </a>
-                </li>
+          </li>
 
-            </ul>
-        </div>
+          <li>
+            <a href="index.html" class="btn btn-primary btn-lg">
+              <span class="glyphicon glyphicon-question-sign"></span>About us
+            </a>
+          </li>
 
-        </div>
-    </nav>
+          <li>
+            <a href="#" class="btn btn-primary btn-lg">
+            <span class="btnN glyphicon glyphicon-menu-hamburger"></span> Menu
+            </a>
+          </li>
+
+        </ul>
+      </div>
+	</nav>
       
       
       <!---Log in stuff -->
@@ -82,28 +76,22 @@
                                                 <h3 class="white-text"><i class="fa fa-user white-text"></i> Sign up</h3>
                                                 <hr class="hr-light">
                                             </div>
-								
+                                
+                                            
 <!-- Default form register -->
-<form>
+<form action="/add" method="POST">
 
     <!-- input username -->
-    <label for="defaultFormRegisterNameEx" class="grey-text">User name</label>
-    <input type="text" id="defaultFormRegisterNameEx" class="form-control">
-    
+    <label for="username" class="grey-text">User name</label>
+    <input type="text" name="username" class="form-control">
     <br>
-
-    <!-- input password -->
-    <label for="defaultFormRegisterEmailEx" class="grey-text">BMI (body mass index)</label>
-    <input type="number" class="form-control">
-    
     <br>
-
-    <!--input bmi -->
-    <label for="defaultFormRegisterPasswordEx" class="grey-text">Password</label>
-    <input type="password" id="defaultFormRegisterPasswordEx" class="form-control">
+    <!--input password -->
+    <label for="password" class="grey-text">Password</label>
+    <input type="password" name="password" class="form-control">
 
     <div class="text-center mt-4">
-       <button class="btn btn-unique"><a href="createWorkOut">Register</a></button>
+        <button class="btn btn-unique" type="submit">Register</button>
     </div>
 </form>
 <!-- Default form register -->
@@ -124,3 +112,4 @@
 
     </body>
 </html>
+               

@@ -5,13 +5,12 @@ from flask import Flask, render_template, request
 from WebCalendarAI import WebCalendarAI
 from PageManager import PageManager
 from Pages import Pages  
+#from CreateTables import CreateTables
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, static_url_path='/static')
-
-
-
-engine = create_engine("postgres://kwyoldtqbouptt:f7127c443551c5b8d363c91d3fd54dd7c9967d64db7e40d82b9d6ea371366b23@ec2-174-129-28-38.compute-1.amazonaws.com:5432/d6g2qqn2orkcf2")
-db = scoped_session(sessionmaker(bind = engine))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/CSI/WebSites/TestWebSite/sql/users.db'
+db = SQLAlchemy(app)
 
 #Where to go.
 @app.route('/')
@@ -23,10 +22,18 @@ def index():
     #PageManage.StoreHtml(page)
     return render_template('index.html')
 
+@app.route('/add', methods=['POST'])
+def add():
+    user = users(id=0, username=request.form['username'], password=request.form['password'], points=0)
+    db.session.add(user)
+    db.session.commit()
+    return render_template('signup.html')
+    
 #route for the signup page.
 @app.route('/signup')
 def signup():
-   return render_template("signup.html")
+    #createTable()
+    return render_template("signup.html")
 
 @app.route('/days')
 def days():
@@ -51,6 +58,12 @@ def createDays():
     calendar = WebCalendarAI()
     days = calendar.getCurrentDays()
     return days
+
+class users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(100))
+    password = db.Column(db.String(100))
+    points = db.Column(db.Integer)
 
 if __name__ == "__main__":
     app.run(debug=True)
